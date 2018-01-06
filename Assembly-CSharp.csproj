@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D0D4C59B-28D6-2C73-253B-CEC786D6FA99}</ProjectGuid>
+    <ProjectGuid>{471F31F6-CB52-91A6-89C7-A8D4B48743D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,7 +51,56 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\XboxController.cs" />
+     <Compile Include="Assets\Application\Scripts\PlayerCcontroller.cs" />
+     <Compile Include="Assets\Application\Scripts\XboxController.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\1.Locomotion\LocomotionGUI.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\1.Locomotion\QueryLocomotionCamera.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\1.Locomotion\QueryLocomotionController.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\2.Helloween\GhostController.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\3.Christmas\ChristmasController.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\CameraAction.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\GUIController.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\GUIControllerAttack.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\GUIControllerChristmas.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\GUIControllerFlying.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\GUIControllerHalloween.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\QueryAnimationController.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\QueryEmotionalController.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\QueryMechanimController.cs" />
+     <Compile Include="Assets\Asset Store\PQAssets\Query-Chan\Scripts\QuerySoundController.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\SceneLoader.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\ThirdPersonCamera.cs" />
+     <Compile Include="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_Skin.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_WrappingPaper.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Documents\ReadMe.txt" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_Fur.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\license_en.txt" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_Standard.shader" />
+     <None Include="Assets\UnityChan\license.txt" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_Snow.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_Halloween.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\license_jp.txt" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_velvet.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_VertexShadow.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
+     <None Include="Assets\UnityChan\Stage\Shader\AlphaMask.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
+     <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_Ribbon.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_TreeLight.shader" />
+     <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_TransBlue.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
