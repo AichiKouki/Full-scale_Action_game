@@ -162,7 +162,76 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip '002_Idle' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'Chr_Spine1' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\nClip '003_Walk' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\nClip '004_Run'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '005_Jump' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '006_Pose' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '100_Fly_Idle' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '101_Fly_Straight' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '102_Fly_toRight' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '103_Fly_toLeft' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '104_Fly_Up' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '105_Fly_Down' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '106_Fly_ItemGet' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '107_Fly_ItemGet_Loop' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '108_Fly_Damage' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '109_Fly_Disappo' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '110_Fly_Disappo_Loop' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '200_AOQ_Idle' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '201_AOQ_restA' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '202_AOQ_restB' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '203_AOQ_Walk' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '204_AOQ_Hit' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '205_AOQ_glad' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      '206_AOQ_warp' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'Chr_Spine1'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
@@ -3315,7 +3384,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 1
