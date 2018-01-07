@@ -4,20 +4,45 @@ using UnityEngine;
 
 public class PlayerCcontroller : MonoBehaviour {
 
+	//アニメーション関連
+	Animator animator;
+	public bool startAttackHit=false;
+	public bool endAttackHit = false;
+	public bool endAttack = false;
+	private int attackType = 1;
+	private bool attackPermission=true;//連続でキーを押して攻撃しようとしてアニメーションがマシンガンみたいに切り替わらないように攻撃許可フラグの作成
+
+	AudioSource aud;
 	[SerializeField]
-	QueryLocomotionController queryLocomotionController;
+	AudioClip[] se;
 
 	// Use this for initialization
 	void Start () {
-		
+		animator = GetComponent<Animator> ();
+		aud = GetComponent<AudioSource> ();
 	}
 	
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
 	void FixedUpdate ()
 	{
 		//xBoxのコントローラー処理
-		if (Input.GetKeyDown(KeyCode.JoystickButton16)) {
+		if (Input.GetKeyDown(KeyCode.JoystickButton16) && attackPermission==true) {
 			Debug.Log("Aボタン");
+			endAttack = false;
+			attackPermission = false;
+			if (attackType == 1) {
+				animator.SetTrigger ("Attack1");
+				aud.PlayOneShot (se [1]);
+				attackType++;
+			} else if (attackType == 2) {
+				animator.SetTrigger ("Attack2");
+				aud.PlayOneShot (se [1]);
+				attackType++;
+			} else if (attackType == 3) {
+				animator.SetTrigger ("Attack3");
+				aud.PlayOneShot (se [0]);
+				attackType = 1;
+			}
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton17)) {
@@ -83,18 +108,12 @@ public class PlayerCcontroller : MonoBehaviour {
 		}else if(RightStickVertical > 0.0f){
 			Debug.Log ("左スティックの上");
 		}
-
-		if (RightStickVertical > 0.7f) {
-			queryLocomotionController.dash = true;
-			Debug.Log ("走れ");
-		}
-
 		//右スティックボタンの左右
 		float LeftStickHorizontal = Input.GetAxis("LeftStickHorizontal");
 		if (LeftStickHorizontal < 0.0f){
 			Debug.Log ("右スティックの右");
 		}else if(LeftStickHorizontal > 0.0f){
-			Debug.Log ("右スティックの左");
+            Debug.Log("右スティックの左");
 		}
 
 		//右スティックボタンの上下
@@ -117,6 +136,22 @@ public class PlayerCcontroller : MonoBehaviour {
 		if (RightTrigger == -1) {
 			Debug.Log ("RTボタンが押された");
 		}
-
 	}//FixedUpdate
+
+	//アニメーションイベント
+	void StartAttackHit(){
+		startAttackHit = true;
+	}
+
+	void EndAttackHit(){
+		endAttack = true;
+	}
+
+	void EndAttack(){
+		animator.SetTrigger ("Idle");
+		startAttackHit = false;
+		endAttackHit = false;
+		endAttack = true;
+		attackPermission = true;
+	}
 }

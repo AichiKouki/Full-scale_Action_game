@@ -1,14 +1,15 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Asset Store/UnityChan/Scripts/UnityChanControlScriptWithRgidBody.cs">
+﻿<Properties StartupConfiguration="{C9654307-3396-8201-6082-8EE2D3A45BD1}|" StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Application/Scripts/PlayerCcontroller.cs">
     <Files>
-      <File FileName="Assets/Application/Scripts/PlayerCcontroller.cs" Line="90" Column="4" />
-      <File FileName="Assets/Asset Store/PQAssets/Query-Chan/Scripts/1.Locomotion/QueryLocomotionController.cs" Line="59" Column="78" />
-      <File FileName="Assets/Asset Store/UnityChan/Scripts/UnityChanControlScriptWithRgidBody.cs" Line="27" Column="36" />
+      <File FileName="Assets/Application/Scripts/PlayerCcontroller.cs" Line="33" Column="36" />
+      <File FileName="Assets/Asset Store/UnityChan/Scripts/UnityChanControlScriptWithRgidBody.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Full-scale__Action__game PreferredExecutionTarget="Unity.Editor" />
 </Properties>
