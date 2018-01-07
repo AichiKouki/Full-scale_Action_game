@@ -16,6 +16,9 @@ public class PlayerCcontroller : MonoBehaviour {
 	[SerializeField]
 	AudioClip[] se;
 
+	[SerializeField]
+	GameObject sword;
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
@@ -141,6 +144,7 @@ public class PlayerCcontroller : MonoBehaviour {
 	//アニメーションイベント
 	void StartAttackHit(){
 		startAttackHit = true;
+		sword.gameObject.tag = "sword";
 	}
 
 	void EndAttackHit(){
@@ -153,5 +157,7 @@ public class PlayerCcontroller : MonoBehaviour {
 		endAttackHit = false;
 		endAttack = true;
 		attackPermission = true;
+
+		sword.gameObject.tag = "Untagged";
 	}
 }
