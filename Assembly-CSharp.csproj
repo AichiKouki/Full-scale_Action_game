@@ -92,6 +92,7 @@
      <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_velvet.shader" />
      <None Include="Assets\Asset Store\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
      <None Include="Assets\Asset Store\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
+     <None Include="Assets\Sword Assets\SpecLightDiffuse.shader" />
      <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_VertexShadow.shader" />
      <None Include="Assets\Asset Store\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
      <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_HW_Ghost.shader" />
