@@ -81,6 +81,7 @@
      <None Include="Assets\Asset Store\PQAssets\Query-Chan\Documents\ReadMe.txt" />
      <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_Fur.shader" />
      <None Include="Assets\Asset Store\PQAssets\Query-Chan\license_en.txt" />
+     <None Include="Assets\animated_samurai\samurai_notes.txt" />
      <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_Standard.shader" />
      <None Include="Assets\Asset Store\UnityChan\license.txt" />
      <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_Snow.shader" />
@@ -100,6 +101,7 @@
      <None Include="Assets\Asset Store\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
      <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_Ribbon.shader" />
      <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_TreeLight.shader" />
+     <None Include="Assets\animated_samurai\sam_motiondata.xml" />
      <None Include="Assets\Asset Store\PQAssets\Query-Chan\Shaders\PQ_TransBlue.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
