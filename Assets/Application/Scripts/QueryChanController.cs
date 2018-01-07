@@ -15,6 +15,12 @@ public class QueryChanController : MonoBehaviour {
 	[SerializeField]
 	AudioClip[] se;
 
+	[SerializeField]
+	UnityChanControlScriptWithRgidBody unityChanControlScriptWithRgidBody;
+
+	//走る処理関連
+	private bool isRun=true;
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
@@ -29,19 +35,10 @@ public class QueryChanController : MonoBehaviour {
 			Debug.Log("Aボタン");
 			endAttack = false;
 			attackPermission = false;
-			if (attackType == 1) {
-				animator.SetTrigger ("Attack1");
-				aud.PlayOneShot (se [1]);
-				attackType++;
-			} else if (attackType == 2) {
-				animator.SetTrigger ("Attack2");
-				aud.PlayOneShot (se [1]);
-				attackType++;
-			} else if (attackType == 3) {
-				animator.SetTrigger ("Attack3");
-				aud.PlayOneShot (se [0]);
-				attackType = 1;
-			}
+
+			animator.SetTrigger ("Attack1");
+			aud.PlayOneShot (se [1]);
+
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton17)) {
@@ -95,18 +92,34 @@ public class QueryChanController : MonoBehaviour {
 		//左のスティックボタンの左右
 		float RightStickHorizontal = Input.GetAxis("RightStickHorizontal");
 		if (RightStickHorizontal < 0.0f){
-			Debug.Log ("左スティックの右");
+			//Debug.Log ("左スティックの右");
 		}else if(RightStickHorizontal > 0.0f){
-			Debug.Log ("左スティックの左");
+			//Debug.Log ("左スティックの左");
 		}
 
 		//左スティックボタンの上下
 		float RightStickVertical = Input.GetAxis("RightStickVertical");
 		if (RightStickVertical < 0.0f){
-			Debug.Log ("左スティックの下");
+			//Debug.Log ("左スティックの下");
 		}else if(RightStickVertical > 0.0f){
-			Debug.Log ("左スティックの上");
+			//Debug.Log ("左スティックの上");
+
+			//走る処理
+			if (RightStickVertical > 0.7f) {
+				unityChanControlScriptWithRgidBody.forwardSpeed = 10f;
+				if (isRun == true) animator.SetTrigger ("Run");
+				isRun = false;
+			}
 		}
+
+		if (isRun==false && RightStickVertical == 0f) {
+			isRun = true;
+			unityChanControlScriptWithRgidBody.forwardSpeed = 7f;
+			//isRun = true;
+			animator.SetTrigger ("Idle");
+			Debug.Log ("走るのやめた");
+		}
+
 		//右スティックボタンの左右
 		float LeftStickHorizontal = Input.GetAxis("LeftStickHorizontal");
 		if (LeftStickHorizontal < 0.0f){
