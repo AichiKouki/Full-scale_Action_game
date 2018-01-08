@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Application\Scripts\GifAnimation.cs" />
      <Compile Include="Assets\Application\Scripts\NormalEnemyController.cs" />
      <Compile Include="Assets\Application\Scripts\QueryChanController.cs" />
      <Compile Include="Assets\Application\Scripts\UnityChanController.cs" />
