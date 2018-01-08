@@ -8,7 +8,7 @@ public class SpecialMoveController : MonoBehaviour {
 	[SerializeField]
 	QueryChanController queryChanController;
 	[SerializeField]
-	GameObject camera;
+	GameObject[] camera;
 	public bool do_special_movie=false;
 	private float special_movie_time;
 	// Use this for initialization
@@ -24,12 +24,16 @@ public class SpecialMoveController : MonoBehaviour {
 
 	void SpecialMovie(){
 		special_movie_time += Time.deltaTime;
-		camera.SetActive (true);
-		if (special_movie_time < 5) {
+		camera[0].SetActive (true);
+		if (special_movie_time > 0 && special_movie_time < 2) {
 			//カメラの操作
-		} else {
+		} else if (special_movie_time >= 2 && special_movie_time < 4) {
+			camera [0].SetActive (false);
+			camera [1].SetActive (true);
+		}else {
 			do_special_movie = false;
-			camera.SetActive (false);
+			camera[0].SetActive (false);
+			camera[1].SetActive (false);
 			queryChanController.special_movie_finish = true;
 		}
 	}
