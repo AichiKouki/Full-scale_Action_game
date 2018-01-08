@@ -21,6 +21,10 @@ public class QueryChanController : MonoBehaviour {
 	//走る処理関連
 	private bool isRun=true;
 
+	//魔法陣
+	[SerializeField]
+	GameObject magicField;
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
@@ -43,6 +47,7 @@ public class QueryChanController : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton17)) {
 			Debug.Log("Bボタンが押された");
+			StartCoroutine ("Display_MagicField");
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton18)) {
@@ -150,6 +155,13 @@ public class QueryChanController : MonoBehaviour {
 		}
 	}//FixedUpdate
 
+	//魔法陣表示処理
+	IEnumerator Display_MagicField(){
+		magicField.SetActive (true);
+		yield return new WaitForSeconds (3);
+		magicField.SetActive (false);
+	}
+
 	//アニメーションイベント
 	void StartAttackHit(){
 		startAttackHit = true;
@@ -166,5 +178,6 @@ public class QueryChanController : MonoBehaviour {
 		endAttack = true;
 		attackPermission = true;
 	}
+	//アニメーションイベントはここまで
 
 }
