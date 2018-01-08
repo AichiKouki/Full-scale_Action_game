@@ -25,24 +25,41 @@ public class QueryChanController : MonoBehaviour {
 	[SerializeField]
 	GameObject magicField;
 
+	//必殺技関連
+	[SerializeField]
+	GameObject ghost;
+	[SerializeField]
+	SpecialMoveController specialMoveController;
+	private float scale_value=1;//15まで上がる
+	private bool do_Deathblow=false;
+	Vector3 ghost_scale;
+	private float deathblow_time;
+	public bool special_movie_finish = false;//SpecialMoveControllerから呼ばれる。必殺技発動時の演出が終わったらtrueになる。
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
 		aud = GetComponent<AudioSource> ();
+		ghost_scale = new Vector3 (1,1,1);//ゴーストのサイズを拡大する処理の時に、newを繰り返さないため
 	}
 
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
 	void FixedUpdate ()
 	{
+		Xbox_controller_process ();
+
+		if (do_Deathblow == true) Deathblow ();
+
+	}//FixedUpdate
+
+	void Xbox_controller_process(){
 		//xBoxのコントローラー処理
 		if (Input.GetKeyDown(KeyCode.JoystickButton16) && attackPermission==true) {
 			Debug.Log("Aボタン");
 			endAttack = false;
 			attackPermission = false;
-
 			animator.SetTrigger ("Attack1");
 			aud.PlayOneShot (se [1]);
-
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton17)) {
@@ -56,6 +73,8 @@ public class QueryChanController : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton19)) {
 			Debug.Log("Yボタンが押された");
+			do_Deathblow = true;
+			specialMoveController.do_special_movie = true;
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton15)) {
@@ -122,7 +141,7 @@ public class QueryChanController : MonoBehaviour {
 			unityChanControlScriptWithRgidBody.forwardSpeed = 7f;
 			//isRun = true;
 			animator.SetTrigger ("Idle");
-			Debug.Log ("走るのやめた");
+			//Debug.Log ("走るのやめた");
 		}
 
 		//右スティックボタンの左右
@@ -153,13 +172,34 @@ public class QueryChanController : MonoBehaviour {
 		if (RightTrigger == -1) {
 			Debug.Log ("RTボタンが押された");
 		}
-	}//FixedUpdate
+
+	}
 
 	//魔法陣表示処理
 	IEnumerator Display_MagicField(){
 		magicField.SetActive (true);
 		yield return new WaitForSeconds (3);
 		magicField.SetActive (false);
+	}
+
+	//必殺技
+	void Deathblow(){
+		//お化けを大きくして、敵に突進するような必殺技
+		if(scale_value<=15)scale_value += Time.deltaTime*3;
+		ghost_scale.x=scale_value;
+		ghost_scale.y=scale_value;
+		ghost_scale.z=scale_value;
+		ghost.transform.localScale = ghost_scale;
+		if (special_movie_finish==true) {//巨大ゴーストを突進させる処理
+			Debug.Log ("突進");
+			deathblow_time+=Time.deltaTime;//時間によって処理を分けるため
+			if (deathblow_time > 5) {
+				Debug.Log ("終了");
+				do_Deathblow = false;
+				special_movie_finish = false;
+				animator.SetTrigger ("Idle");
+			}
+		}
 	}
 
 	//アニメーションイベント

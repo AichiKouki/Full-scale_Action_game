@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 8f41357559c48456c82cda17573c07e4
+timeCreated: 1515398608
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BF2.008
+    100002: Camera
+    100004: //RootNode
+    100006: Cube.001
+    100008: Lamp
+    100010: Lamp.002
+    100012: "NURBS\u30D1\u30B9"
+    100014: road
+    100016: Save OBJ.004
+    100018: sidewalk
+    100020: upper1
+    100022: "\u30E2\u30F3\u30AD\u30FC"
+    100024: "\u4FE1\u53F7\u6A5F\u3000\u672C\u4F53.005"
+    100026: "\u5186\u67F1.005"
+    100028: "\u6A2A\u65AD\u6B69\u9053.000"
+    400000: BF2.008
+    400002: Camera
+    400004: //RootNode
+    400006: Cube.001
+    400008: Lamp
+    400010: Lamp.002
+    400012: "NURBS\u30D1\u30B9"
+    400014: road
+    400016: Save OBJ.004
+    400018: sidewalk
+    400020: upper1
+    400022: "\u30E2\u30F3\u30AD\u30FC"
+    400024: "\u4FE1\u53F7\u6A5F\u3000\u672C\u4F53.005"
+    400026: "\u5186\u67F1.005"
+    400028: "\u6A2A\u65AD\u6B69\u9053.000"
+    2000000: Camera
+    2100000: No Name
+    2100002: light
+    2100004: "\u30DD\u30FC\u30EB"
+    2100006: leaf
+    2100008: wood
+    2100010: sidewalk
+    2100012: asphalt
+    2100014: apphalt2
+    2100016: asphalt3
+    2100018: BF
+    2100020: concrete
+    2100022: brick2
+    2100024: window
+    2100026: brick1
+    2100028: "\u4FE1\u53F7\u6A5F"
+    2300000: BF2.008
+    2300002: Cube.001
+    2300004: "NURBS\u30D1\u30B9"
+    2300006: road
+    2300008: Save OBJ.004
+    2300010: sidewalk
+    2300012: upper1
+    2300014: "\u30E2\u30F3\u30AD\u30FC"
+    2300016: "\u4FE1\u53F7\u6A5F\u3000\u672C\u4F53.005"
+    2300018: "\u5186\u67F1.005"
+    2300020: "\u6A2A\u65AD\u6B69\u9053.000"
+    3300000: BF2.008
+    3300002: Cube.001
+    3300004: "NURBS\u30D1\u30B9"
+    3300006: road
+    3300008: Save OBJ.004
+    3300010: sidewalk
+    3300012: upper1
+    3300014: "\u30E2\u30F3\u30AD\u30FC"
+    3300016: "\u4FE1\u53F7\u6A5F\u3000\u672C\u4F53.005"
+    3300018: "\u5186\u67F1.005"
+    3300020: "\u6A2A\u65AD\u6B69\u9053.000"
+    4300000: "NURBS\u30D1\u30B9"
+    4300002: "\u30E2\u30F3\u30AD\u30FC"
+    4300004: Cube.001
+    4300006: "\u5186\u67F1.005"
+    4300008: Save OBJ.004
+    4300010: sidewalk
+    4300012: "\u6A2A\u65AD\u6B69\u9053.000"
+    4300014: road
+    4300016: BF2.008
+    4300018: upper1
+    4300020: "\u4FE1\u53F7\u6A5F\u3000\u672C\u4F53.005"
+    7400000: "\u30E2\u30F3\u30AD\u30FC|CameraAction"
+    7400002: "\u30E2\u30F3\u30AD\u30FC|\u30E2\u30F3\u30AD\u30FCAction"
+    7400004: Camera|CameraAction
+    7400006: "Camera|\u30E2\u30F3\u30AD\u30FCAction"
+    9500000: //RootNode
+    10800000: Lamp
+    10800002: Lamp.002
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

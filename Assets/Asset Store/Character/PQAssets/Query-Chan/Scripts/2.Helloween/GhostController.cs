@@ -6,8 +6,7 @@ public class GhostController : MonoBehaviour {
 	[SerializeField]
 	GameObject rotationTarget;
 
-	[SerializeField]
-	float rotationSpeed = 15f;
+	public float rotationSpeed = 15f;
 
 	[SerializeField]
 	float shakeRange = 0.3f;
@@ -25,7 +24,6 @@ public class GhostController : MonoBehaviour {
 	float nextFaceChangeTime = 0;
 
 	//-----------------------
-
 
 	// Use this for initialization
 	void Start () {

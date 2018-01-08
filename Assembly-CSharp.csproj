@@ -54,6 +54,7 @@
      <Compile Include="Assets\Application\Scripts\GifAnimation.cs" />
      <Compile Include="Assets\Application\Scripts\NormalEnemyController.cs" />
      <Compile Include="Assets\Application\Scripts\QueryChanController.cs" />
+     <Compile Include="Assets\Application\Scripts\SpecialMoveController.cs" />
      <Compile Include="Assets\Application\Scripts\UnityChanController.cs" />
      <Compile Include="Assets\Application\Scripts\XboxController.cs" />
      <Compile Include="Assets\Asset Store\Character\PQAssets\Query-Chan\Scripts\1.Locomotion\LocomotionGUI.cs" />
