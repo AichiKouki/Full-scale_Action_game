@@ -26,6 +26,8 @@ public class QueryChanController : MonoBehaviour {
 	[SerializeField]
 	GameObject ghost;
 	[SerializeField]
+	GameObject deathblow_Ghost;
+	[SerializeField]
 	SpecialMoveController specialMoveController;
 	[SerializeField]
 	UnityChanControlScriptWithRgidBody unityChanControlScriptWithRgidBody;//必殺技発動時は移動とかできないようにしたいから
@@ -72,6 +74,7 @@ public class QueryChanController : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton19)) {
 			Debug.Log("Yボタンが押された");
+			deathblow_Ghost.SetActive (true);
 			do_Deathblow = true;
 			specialMoveController.do_special_movie = true;
 			unityChanControlScriptWithRgidBody.enabled = false;
@@ -191,16 +194,19 @@ public class QueryChanController : MonoBehaviour {
 		ghost_scale.x=scale_value;
 		ghost_scale.y=scale_value;
 		ghost_scale.z=scale_value;
-		ghost.transform.localScale = ghost_scale;
+		deathblow_Ghost.transform.localScale = ghost_scale;
 		if (special_movie_finish==true) {//巨大ゴーストを突進させる処理
 			Debug.Log ("突進");
 			deathblow_time+=Time.deltaTime;//時間によって処理を分けるため
-			if (deathblow_time > 5) {
+			if (deathblow_time > 4) {
 				Debug.Log ("終了");
+				deathblow_time = 0;
 				do_Deathblow = false;
 				special_movie_finish = false;
-				animator.SetTrigger ("Idle");
 				unityChanControlScriptWithRgidBody.enabled = true;
+				deathblow_Ghost.transform.localScale = new Vector3 (1,1,1);
+				scale_value = 1;
+				deathblow_Ghost.SetActive (false);
 			}
 		}
 	}
