@@ -76,6 +76,7 @@ public class QueryChanController : MonoBehaviour {
 			do_Deathblow = true;
 			specialMoveController.do_special_movie = true;
 			animator.SetTrigger ("Deathblow");
+			aud.PlayOneShot (se[0]);
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton15)) {
