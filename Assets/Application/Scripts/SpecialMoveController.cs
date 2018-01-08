@@ -11,6 +11,8 @@ public class SpecialMoveController : MonoBehaviour {
 	GameObject[] camera;
 	public bool do_special_movie=false;
 	private float special_movie_time;
+	[SerializeField]
+	Material[] skybox;
 	// Use this for initialization
 	void Start () {
 		
@@ -25,6 +27,8 @@ public class SpecialMoveController : MonoBehaviour {
 	void SpecialMovie(){
 		special_movie_time += Time.deltaTime;
 		camera[0].SetActive (true);
+		// Skyboxを変更する
+		RenderSettings.skybox = skybox[1];
 		if (special_movie_time > 0 && special_movie_time < 2) {
 			//カメラの操作
 		} else if (special_movie_time >= 2 && special_movie_time < 4) {
@@ -36,6 +40,7 @@ public class SpecialMoveController : MonoBehaviour {
 			camera[0].SetActive (false);
 			camera[1].SetActive (false);
 			queryChanController.special_movie_finish = true;
+			RenderSettings.skybox = skybox[0];
 		}
 	}
 }

@@ -196,15 +196,17 @@ public class QueryChanController : MonoBehaviour {
 		ghost_scale.z=scale_value;
 		deathblow_Ghost.transform.localScale = ghost_scale;
 		if (special_movie_finish==true) {//巨大ゴーストを突進させる処理
-			Debug.Log ("突進");
+			//Debug.Log ("突進");
+			unityChanControlScriptWithRgidBody.enabled = true;
+			deathblow_Ghost.transform.Translate (0,0,3*Time.deltaTime);
 			deathblow_time+=Time.deltaTime;//時間によって処理を分けるため
 			if (deathblow_time > 4) {
 				Debug.Log ("終了");
 				deathblow_time = 0;
 				do_Deathblow = false;
 				special_movie_finish = false;
-				unityChanControlScriptWithRgidBody.enabled = true;
 				deathblow_Ghost.transform.localScale = new Vector3 (1,1,1);
+				deathblow_Ghost.transform.localPosition = new Vector3 (0.2f,0,5);
 				scale_value = 1;
 				deathblow_Ghost.SetActive (false);
 			}
