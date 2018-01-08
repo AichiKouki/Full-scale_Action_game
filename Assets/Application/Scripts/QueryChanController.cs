@@ -15,9 +15,6 @@ public class QueryChanController : MonoBehaviour {
 	[SerializeField]
 	AudioClip[] se;
 
-	[SerializeField]
-	UnityChanControlScriptWithRgidBody unityChanControlScriptWithRgidBody;
-
 	//走る処理関連
 	private bool isRun=true;
 
@@ -30,6 +27,8 @@ public class QueryChanController : MonoBehaviour {
 	GameObject ghost;
 	[SerializeField]
 	SpecialMoveController specialMoveController;
+	[SerializeField]
+	UnityChanControlScriptWithRgidBody unityChanControlScriptWithRgidBody;//必殺技発動時は移動とかできないようにしたいから
 	private float scale_value=1;//15まで上がる
 	private bool do_Deathblow=false;
 	Vector3 ghost_scale;
@@ -46,7 +45,7 @@ public class QueryChanController : MonoBehaviour {
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
 	void FixedUpdate ()
 	{
-		Xbox_controller_process ();
+		if(do_Deathblow==false) Xbox_controller_process ();
 
 		if (do_Deathblow == true) Deathblow ();
 
@@ -75,6 +74,7 @@ public class QueryChanController : MonoBehaviour {
 			Debug.Log("Yボタンが押された");
 			do_Deathblow = true;
 			specialMoveController.do_special_movie = true;
+			unityChanControlScriptWithRgidBody.enabled = false;
 			animator.SetTrigger ("Deathblow");
 			aud.PlayOneShot (se[0]);
 		}
@@ -200,6 +200,7 @@ public class QueryChanController : MonoBehaviour {
 				do_Deathblow = false;
 				special_movie_finish = false;
 				animator.SetTrigger ("Idle");
+				unityChanControlScriptWithRgidBody.enabled = true;
 			}
 		}
 	}

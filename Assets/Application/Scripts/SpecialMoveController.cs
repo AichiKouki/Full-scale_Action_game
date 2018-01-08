@@ -32,6 +32,7 @@ public class SpecialMoveController : MonoBehaviour {
 			camera [1].SetActive (true);
 		}else {
 			do_special_movie = false;
+			special_movie_time = 0;
 			camera[0].SetActive (false);
 			camera[1].SetActive (false);
 			queryChanController.special_movie_finish = true;
