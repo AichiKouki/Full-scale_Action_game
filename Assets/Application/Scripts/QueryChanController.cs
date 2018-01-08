@@ -31,6 +31,8 @@ public class QueryChanController : MonoBehaviour {
 	SpecialMoveController specialMoveController;
 	[SerializeField]
 	UnityChanControlScriptWithRgidBody unityChanControlScriptWithRgidBody;//必殺技発動時は移動とかできないようにしたいから
+	[SerializeField]
+	Transform Deathblow_Ghost_parent_when_moving;
 	private float scale_value=1;//15まで上がる
 	private bool do_Deathblow=false;
 	Vector3 ghost_scale;
@@ -60,7 +62,7 @@ public class QueryChanController : MonoBehaviour {
 			endAttack = false;
 			attackPermission = false;
 			animator.SetTrigger ("Attack1");
-			aud.PlayOneShot (se [1]);
+			aud.PlayOneShot (se [0]);
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton17)) {
@@ -78,6 +80,7 @@ public class QueryChanController : MonoBehaviour {
 			do_Deathblow = true;
 			specialMoveController.do_special_movie = true;
 			unityChanControlScriptWithRgidBody.enabled = false;
+			deathblow_Ghost.transform.parent = Deathblow_Ghost_parent_when_moving;//このままだと巨大ゴーストの移動中にQueryちゃんと同じ方向に動いてしまうから一時的に親を変更
 			animator.SetTrigger ("Deathblow");
 			aud.PlayOneShot (se[0]);
 		}
@@ -206,7 +209,9 @@ public class QueryChanController : MonoBehaviour {
 				do_Deathblow = false;
 				special_movie_finish = false;
 				deathblow_Ghost.transform.localScale = new Vector3 (1,1,1);
-				deathblow_Ghost.transform.localPosition = new Vector3 (0.2f,0,5);
+				deathblow_Ghost.transform.parent = gameObject.transform;//巨大した時に親要素を変更したので親を元に戻す
+				deathblow_Ghost.transform.localPosition = new Vector3 (0.2f,0,5);//親を戻してからローカル座標を元に戻す
+				deathblow_Ghost.transform.localRotation = Quaternion.Euler(0,0,0);//親を戻してから向きを元に戻す
 				scale_value = 1;
 				deathblow_Ghost.SetActive (false);
 			}
