@@ -11,6 +11,7 @@ public class MagicAttackObjController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		enemy = GameObject.FindWithTag ("enemy");
+		StartCoroutine ("AutoDestroyer");
 	}
 	
 	// Update is called once per frame
@@ -28,6 +29,11 @@ public class MagicAttackObjController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		Debug.Log ("ぶつかった");
+		Destroy (gameObject);
+	}
+
+	IEnumerator AutoDestroyer(){
+		yield return new WaitForSeconds (5);
 		Destroy (gameObject);
 	}
 }

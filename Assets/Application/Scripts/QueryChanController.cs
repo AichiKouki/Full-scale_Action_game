@@ -48,6 +48,7 @@ public class QueryChanController : MonoBehaviour {
 	private float deathblow_time;
 	public bool special_movie_finish = false;//SpecialMoveControllerから呼ばれる。必殺技発動時の演出が終わったらtrueになる。
 	private bool once_process=false;//一度だけ処理したい時のため
+	private bool xbox_controller_licensing=true;//xboxコントローラーを使用していいかのフラグ
 
 	// Use this for initialization
 	void Start () {
@@ -59,7 +60,7 @@ public class QueryChanController : MonoBehaviour {
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
 	void FixedUpdate ()
 	{
-		if(do_Deathblow==false) Xbox_controller_process ();
+		if(xbox_controller_licensing==true) Xbox_controller_process ();
 
 		if (do_Deathblow == true) Deathblow ();
 
@@ -88,6 +89,7 @@ public class QueryChanController : MonoBehaviour {
 			Debug.Log("Yボタンが押された");
 			deathblow_Ghost.SetActive (true);
 			do_Deathblow = true;//必殺技を開始したのでtrue
+			xbox_controller_licensing=false;//xboxコントローラーを一時的に使えなくする
 			specialMoveController.do_special_movie = true;//必殺技カメラ演出をスタートさせるフラグ
 			unityChanControlScriptWithRgidBody.enabled = false;//Unityちゃんの移動スクリプトをオフにして移動できなくする。
 			deathblow_Ghost.transform.parent = Deathblow_Ghost_parent_when_moving;//このままだと巨大ゴーストの移動中にQueryちゃんと同じ方向に動いてしまうから一時的に親を変更
@@ -214,6 +216,7 @@ public class QueryChanController : MonoBehaviour {
 			if (once_process == false) {//処理が一度だけでいい部分
 				once_process = true;//一度だけ処理のため
 				unityChanControlScriptWithRgidBody.enabled = true;
+				xbox_controller_licensing = true;
 				summoning_magicField.SetActive (false);
 			}
 			deathblow_Ghost.transform.Translate (0,0,3*Time.deltaTime);
