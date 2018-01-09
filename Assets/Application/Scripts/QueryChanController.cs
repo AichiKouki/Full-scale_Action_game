@@ -213,7 +213,6 @@ public class QueryChanController : MonoBehaviour {
 			//Debug.Log ("突進");
 			if (once_process == false) {//処理が一度だけでいい部分
 				once_process = true;//一度だけ処理のため
-				do_Deathblow = false;//必殺技を行ったのでfalseに戻す
 				unityChanControlScriptWithRgidBody.enabled = true;
 				summoning_magicField.SetActive (false);
 			}
@@ -223,6 +222,7 @@ public class QueryChanController : MonoBehaviour {
 				Debug.Log ("終了");
 				deathblow_time = 0;
 				special_movie_finish = false;
+				do_Deathblow = false;//必殺技を行ったのでfalseに戻す
 				deathblow_Ghost.transform.localScale = new Vector3 (1,1,1);
 				deathblow_Ghost.transform.parent = gameObject.transform;//巨大した時に親要素を変更したので親を元に戻す
 				deathblow_Ghost.transform.localPosition = new Vector3 (0.2f,0,5);//親を戻してからローカル座標を元に戻す
