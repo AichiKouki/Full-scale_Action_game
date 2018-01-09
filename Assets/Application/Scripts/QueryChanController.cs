@@ -21,6 +21,8 @@ public class QueryChanController : MonoBehaviour {
 	//魔法陣
 	[SerializeField]
 	GameObject magicField;
+	[SerializeField]
+	GameObject summoning_magicField;//必殺技の時に召喚したような演出のため
 
 	//必殺技関連
 	[SerializeField]
@@ -38,6 +40,7 @@ public class QueryChanController : MonoBehaviour {
 	Vector3 ghost_scale;
 	private float deathblow_time;
 	public bool special_movie_finish = false;//SpecialMoveControllerから呼ばれる。必殺技発動時の演出が終わったらtrueになる。
+	private bool once_process=false;//一度だけ処理したい時のため
 
 	// Use this for initialization
 	void Start () {
@@ -83,6 +86,7 @@ public class QueryChanController : MonoBehaviour {
 			deathblow_Ghost.transform.parent = Deathblow_Ghost_parent_when_moving;//このままだと巨大ゴーストの移動中にQueryちゃんと同じ方向に動いてしまうから一時的に親を変更
 			animator.SetTrigger ("Deathblow");
 			aud.PlayOneShot (se[0]);
+			summoning_magicField.SetActive (true);//召喚魔法陣を表示
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton15)) {
@@ -200,7 +204,11 @@ public class QueryChanController : MonoBehaviour {
 		deathblow_Ghost.transform.localScale = ghost_scale;
 		if (special_movie_finish==true) {//巨大ゴーストを突進させる処理
 			//Debug.Log ("突進");
-			unityChanControlScriptWithRgidBody.enabled = true;
+			if (once_process == false) {//処理が一度だけでいい部分
+				once_process = true;
+				unityChanControlScriptWithRgidBody.enabled = true;
+				summoning_magicField.SetActive (false);
+			}
 			deathblow_Ghost.transform.Translate (0,0,3*Time.deltaTime);
 			deathblow_time+=Time.deltaTime;//時間によって処理を分けるため
 			if (deathblow_time > 4) {
@@ -214,6 +222,7 @@ public class QueryChanController : MonoBehaviour {
 				deathblow_Ghost.transform.localRotation = Quaternion.Euler(0,0,0);//親を戻してから向きを元に戻す
 				scale_value = 1;
 				deathblow_Ghost.SetActive (false);
+				once_process = false;
 			}
 		}
 	}
