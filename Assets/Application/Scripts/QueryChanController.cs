@@ -237,7 +237,10 @@ public class QueryChanController : MonoBehaviour {
 	}
 
 	void EndAttack(){
-		animator.SetTrigger ("Idle");
+		if (isRun == false)
+			animator.SetTrigger ("Run");
+		else
+			animator.SetTrigger ("Idle");
 		startAttackHit = false;
 		endAttackHit = false;
 		endAttack = true;
