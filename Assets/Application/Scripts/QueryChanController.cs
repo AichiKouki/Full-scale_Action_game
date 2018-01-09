@@ -80,9 +80,9 @@ public class QueryChanController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.JoystickButton19)) {
 			Debug.Log("Yボタンが押された");
 			deathblow_Ghost.SetActive (true);
-			do_Deathblow = true;
-			specialMoveController.do_special_movie = true;
-			unityChanControlScriptWithRgidBody.enabled = false;
+			do_Deathblow = true;//必殺技を開始したのでtrue
+			specialMoveController.do_special_movie = true;//必殺技カメラ演出をスタートさせるフラグ
+			unityChanControlScriptWithRgidBody.enabled = false;//Unityちゃんの移動スクリプトをオフにして移動できなくする。
 			deathblow_Ghost.transform.parent = Deathblow_Ghost_parent_when_moving;//このままだと巨大ゴーストの移動中にQueryちゃんと同じ方向に動いてしまうから一時的に親を変更
 			animator.SetTrigger ("Deathblow");
 			aud.PlayOneShot (se[0]);
@@ -205,7 +205,8 @@ public class QueryChanController : MonoBehaviour {
 		if (special_movie_finish==true) {//巨大ゴーストを突進させる処理
 			//Debug.Log ("突進");
 			if (once_process == false) {//処理が一度だけでいい部分
-				once_process = true;
+				once_process = true;//一度だけ処理のため
+				do_Deathblow = false;//必殺技を行ったのでfalseに戻す
 				unityChanControlScriptWithRgidBody.enabled = true;
 				summoning_magicField.SetActive (false);
 			}
@@ -214,7 +215,6 @@ public class QueryChanController : MonoBehaviour {
 			if (deathblow_time > 4) {
 				Debug.Log ("終了");
 				deathblow_time = 0;
-				do_Deathblow = false;
 				special_movie_finish = false;
 				deathblow_Ghost.transform.localScale = new Vector3 (1,1,1);
 				deathblow_Ghost.transform.parent = gameObject.transform;//巨大した時に親要素を変更したので親を元に戻す
