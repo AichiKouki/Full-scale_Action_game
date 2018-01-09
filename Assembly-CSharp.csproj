@@ -100,6 +100,8 @@
      <Compile Include="Assets\Asset Store\UI\SamplesUI\Scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\Asset Store\UI\SamplesUI\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Asset Store\UI\SamplesUI\Scripts\TiltWindow.cs" />
+     <Compile Include="Assets\KY_effects\Script\ConGUI.cs" />
+     <Compile Include="Assets\KY_effects\Script\Lighting.cs" />
      <None Include="Assets\Asset Store\Character\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\Asset Store\Character\PQAssets\Query-Chan\Shaders\PQ_Skin.shader" />
      <None Include="Assets\Asset Store\Character\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
@@ -122,6 +124,7 @@
      <None Include="Assets\Asset Store\UI\SamplesUI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Asset Store\Character\PQAssets\Query-Chan\Shaders\PQ_velvet.shader" />
      <None Include="Assets\Asset Store\Character\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
+     <None Include="Assets\KY_effects\MagicEffectsPackFree\ReadMe.txt" />
      <None Include="Assets\Asset Store\Effect\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleAddSoftEffect.shader" />
      <None Include="Assets\Asset Store\Character\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
      <None Include="Assets\Asset Store\Weapon\Sword Assets\SpecLightDiffuse.shader" />
