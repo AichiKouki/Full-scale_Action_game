@@ -24,6 +24,13 @@ public class QueryChanController : MonoBehaviour {
 	[SerializeField]
 	GameObject summoning_magicField;//必殺技の時に召喚したような演出のため
 
+	//通常攻撃
+	[SerializeField]
+	GameObject[] magicAttackObjPre;
+	[SerializeField]
+	GameObject magicAttackObjPos;
+	GameObject magicAttackObj;
+
 	//必殺技関連
 	[SerializeField]
 	GameObject ghost;
@@ -65,7 +72,7 @@ public class QueryChanController : MonoBehaviour {
 			endAttack = false;
 			attackPermission = false;
 			animator.SetTrigger ("Attack1");
-			aud.PlayOneShot (se [0]);
+			magicAttackObj = (GameObject)Instantiate (magicAttackObjPre[0],magicAttackObjPos.transform.position,Quaternion.identity);
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton17)) {
