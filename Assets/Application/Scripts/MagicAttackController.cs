@@ -10,6 +10,8 @@ public class MagicAttackController : MonoBehaviour {
 	[SerializeField]
 	GameObject summoning_magicField;//必殺技の時に召喚したような演出のため
 	[SerializeField]
+	GameObject magic_ring;
+	[SerializeField]
 	GameObject ghost;
 	[SerializeField]
 	GameObject deathblow_Ghost;
@@ -28,7 +30,7 @@ public class MagicAttackController : MonoBehaviour {
 	private bool xbox_controller_licensing=true;//xboxコントローラーを使用していいかのフラグ
 	// Use this for initialization
 	void Start () {
-		
+		ghost_scale = new Vector3 (1,1,1);//ゴーストのサイズを拡大する処理の時に、newを繰り返さないため
 	}
 	
 	// Update is called once per frame
@@ -43,7 +45,8 @@ public class MagicAttackController : MonoBehaviour {
 		specialMoveController.do_special_movie = true;//必殺技カメラ演出をスタートさせるフラグ
 		unityChanControlScriptWithRgidBody.enabled = false;//Unityちゃんの移動スクリプトをオフにして移動できなくする。
 		deathblow_Ghost.transform.parent = Deathblow_Ghost_parent_when_moving;//このままだと巨大ゴーストの移動中にQueryちゃんと同じ方向に動いてしまうから一時的に親を変更
-		summoning_magicField.SetActive (true);//召喚魔法陣を表示
+		summoning_magicField.SetActive (true);//必殺技発動時のキャラの周りのエフェクト
+		magic_ring.SetActive(true);
 	}
 
 	//必殺技
@@ -64,6 +67,7 @@ public class MagicAttackController : MonoBehaviour {
 				unityChanControlScriptWithRgidBody.enabled = true;
 				queryChanController.xbox_controller_licensing = true;
 				summoning_magicField.SetActive (false);
+				magic_ring.SetActive(false);
 				deathblow_time = 0;
 			}
 

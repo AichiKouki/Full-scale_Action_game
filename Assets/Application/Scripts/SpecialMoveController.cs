@@ -6,8 +6,6 @@ public class SpecialMoveController : MonoBehaviour {
 	//スカイボックス変えたりカメラを切り替えたり
 
 	[SerializeField]
-	QueryChanController queryChanController;
-	[SerializeField]
 	MagicAttackController magicAttackController;
 	[SerializeField]
 	GameObject[] camera;

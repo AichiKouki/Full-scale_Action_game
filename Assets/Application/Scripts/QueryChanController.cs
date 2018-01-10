@@ -15,6 +15,10 @@ public class QueryChanController : MonoBehaviour {
 	[SerializeField]
 	AudioClip[] se;
 
+	[SerializeField]
+	UnityChanControlScriptWithRgidBody unityChanControlScriptWithRgidBody;//必殺技発動時は移動とかできないようにしたいから
+
+
 	//走る処理関連
 	private bool isRun=true;
 
@@ -34,29 +38,12 @@ public class QueryChanController : MonoBehaviour {
 	//必殺技関連
 	[SerializeField]
 	MagicAttackController magicAttackController;
-	[SerializeField]
-	GameObject ghost;
-	[SerializeField]
-	GameObject deathblow_Ghost;
-	[SerializeField]
-	SpecialMoveController specialMoveController;
-	[SerializeField]
-	UnityChanControlScriptWithRgidBody unityChanControlScriptWithRgidBody;//必殺技発動時は移動とかできないようにしたいから
-	[SerializeField]
-	Transform Deathblow_Ghost_parent_when_moving;
-	private float scale_value=1;//15まで上がる
-	private bool do_Deathblow=false;
-	Vector3 ghost_scale;
-	private float deathblow_time;
-	public bool special_movie_finish = false;//SpecialMoveControllerから呼ばれる。必殺技発動時の演出が終わったらtrueになる。
-	private bool once_process=false;//一度だけ処理したい時のため
 	public bool xbox_controller_licensing=true;//xboxコントローラーを使用していいかのフラグ
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
 		aud = GetComponent<AudioSource> ();
-		ghost_scale = new Vector3 (1,1,1);//ゴーストのサイズを拡大する処理の時に、newを繰り返さないため
 
 		if (SystemInfo.supportsVibration) print("振動対応");
 		else print("振動非対応");
