@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\amusedART\StoneMonster\Script\Animation_Test.cs" />
      <Compile Include="Assets\Application\Scripts\GifAnimation.cs" />
      <Compile Include="Assets\Application\Scripts\MagicAttackObjController.cs" />
      <Compile Include="Assets\Application\Scripts\NormalEnemyController.cs" />
@@ -59,6 +58,7 @@
      <Compile Include="Assets\Application\Scripts\SpecialMoveController.cs" />
      <Compile Include="Assets\Application\Scripts\UnityChanController.cs" />
      <Compile Include="Assets\Application\Scripts\XboxController.cs" />
+     <Compile Include="Assets\Asset Store\Character\amusedART\StoneMonster\Script\Animation_Test.cs" />
      <Compile Include="Assets\Asset Store\Character\PQAssets\Query-Chan\Scripts\1.Locomotion\LocomotionGUI.cs" />
      <Compile Include="Assets\Asset Store\Character\PQAssets\Query-Chan\Scripts\1.Locomotion\QueryLocomotionCamera.cs" />
      <Compile Include="Assets\Asset Store\Character\PQAssets\Query-Chan\Scripts\1.Locomotion\QueryLocomotionController.cs" />
