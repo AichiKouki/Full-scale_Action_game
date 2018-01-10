@@ -181,6 +181,7 @@
 -define:UNITY_EDITOR_OSX
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
+'Assets/amusedART/StoneMonster/Script/Animation_Test.cs'
 'Assets/Application/Scripts/GifAnimation.cs'
 'Assets/Application/Scripts/MagicAttackObjController.cs'
 'Assets/Application/Scripts/NormalEnemyController.cs'

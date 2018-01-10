@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\amusedART\StoneMonster\Script\Animation_Test.cs" />
      <Compile Include="Assets\Application\Scripts\GifAnimation.cs" />
      <Compile Include="Assets\Application\Scripts\MagicAttackObjController.cs" />
      <Compile Include="Assets\Application\Scripts\NormalEnemyController.cs" />
