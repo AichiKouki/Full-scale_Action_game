@@ -21,10 +21,14 @@ public class MagicAttackObjController : MonoBehaviour {
 
 	//敵を追従する処理
 	void Chase_enemy(){
+		if (enemy == null) {
+			
+		}else{
 		//ターゲットの方に向く処理
 		transform.rotation=Quaternion.Slerp (transform.rotation, Quaternion.LookRotation (enemy.transform.position - transform.position), 0.3f);//ターゲットの方に少しずつ向きが変わる
 
 		transform.position += transform.forward *Time.deltaTime* speed;//前へ移動
+		}
 	}
 
 	void OnTriggerEnter(Collider other){

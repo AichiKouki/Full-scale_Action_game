@@ -8,6 +8,8 @@ public class SpecialMoveController : MonoBehaviour {
 	[SerializeField]
 	QueryChanController queryChanController;
 	[SerializeField]
+	MagicAttackController magicAttackController;
+	[SerializeField]
 	GameObject[] camera;
 	public bool do_special_movie=false;
 	private float special_movie_time;
@@ -41,7 +43,7 @@ public class SpecialMoveController : MonoBehaviour {
 			special_movie_time = 0;
 			camera[0].SetActive (false);
 			camera[1].SetActive (false);
-			queryChanController.special_movie_finish = true;
+			magicAttackController.special_movie_finish = true;
 			RenderSettings.skybox = skybox[0];
 			directional_Light.SetActive (true);//ディレクショナルライトを非表示にしてキャラ以外をほとんど表示しない感じにする
 		}

@@ -9,6 +9,9 @@ public class NormalEnemyController : MonoBehaviour {
 
 	Animator animator;
 
+	[SerializeField]
+	GameObject hitPoint;
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
@@ -29,6 +32,7 @@ public class NormalEnemyController : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "magicAttackObj") {
 			animator.SetTrigger ("Dead");
+			hitPoint.gameObject.tag = "Untagged";
 		}
 	}
 }

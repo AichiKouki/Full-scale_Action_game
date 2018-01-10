@@ -33,6 +33,8 @@ public class QueryChanController : MonoBehaviour {
 
 	//必殺技関連
 	[SerializeField]
+	MagicAttackController magicAttackController;
+	[SerializeField]
 	GameObject ghost;
 	[SerializeField]
 	GameObject deathblow_Ghost;
@@ -48,21 +50,22 @@ public class QueryChanController : MonoBehaviour {
 	private float deathblow_time;
 	public bool special_movie_finish = false;//SpecialMoveControllerから呼ばれる。必殺技発動時の演出が終わったらtrueになる。
 	private bool once_process=false;//一度だけ処理したい時のため
-	private bool xbox_controller_licensing=true;//xboxコントローラーを使用していいかのフラグ
+	public bool xbox_controller_licensing=true;//xboxコントローラーを使用していいかのフラグ
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
 		aud = GetComponent<AudioSource> ();
 		ghost_scale = new Vector3 (1,1,1);//ゴーストのサイズを拡大する処理の時に、newを繰り返さないため
+
+		if (SystemInfo.supportsVibration) print("振動対応");
+		else print("振動非対応");
 	}
 
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
 	void FixedUpdate ()
 	{
 		if(xbox_controller_licensing==true) Xbox_controller_process ();
-
-		if (do_Deathblow == true) Deathblow ();
 
 	}//FixedUpdate
 
@@ -71,8 +74,8 @@ public class QueryChanController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.JoystickButton16) && attackPermission==true) {
 			Debug.Log("Aボタン");
 			endAttack = false;
-			attackPermission = false;
-			animator.SetTrigger ("Attack1");
+			//attackPermission = false;
+			//animator.SetTrigger ("Attack1");
 			magicAttackObj = (GameObject)Instantiate (magicAttackObjPre[0],magicAttackObjPos.transform.position,Quaternion.identity);
 		}
 
@@ -87,15 +90,10 @@ public class QueryChanController : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton19)) {
 			Debug.Log("Yボタンが押された");
-			deathblow_Ghost.SetActive (true);
-			do_Deathblow = true;//必殺技を開始したのでtrue
+			magicAttackController.StartDeathblow ();
 			xbox_controller_licensing=false;//xboxコントローラーを一時的に使えなくする
-			specialMoveController.do_special_movie = true;//必殺技カメラ演出をスタートさせるフラグ
-			unityChanControlScriptWithRgidBody.enabled = false;//Unityちゃんの移動スクリプトをオフにして移動できなくする。
-			deathblow_Ghost.transform.parent = Deathblow_Ghost_parent_when_moving;//このままだと巨大ゴーストの移動中にQueryちゃんと同じ方向に動いてしまうから一時的に親を変更
 			animator.SetTrigger ("Deathblow");
 			aud.PlayOneShot (se[0]);
-			summoning_magicField.SetActive (true);//召喚魔法陣を表示
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton15)) {
@@ -204,40 +202,7 @@ public class QueryChanController : MonoBehaviour {
 		yield return new WaitForSeconds (3);
 		magicField.SetActive (false);
 	}
-
-	//必殺技
-	void Deathblow(){
-		//お化けを大きくして、敵に突進するような必殺技
-		if(scale_value<=30)scale_value += Time.deltaTime*3;
-		ghost_scale.x=scale_value;
-		ghost_scale.y=scale_value;
-		ghost_scale.z=scale_value;
-		deathblow_Ghost.transform.localScale = ghost_scale;
-		if (special_movie_finish==true) {//巨大ゴーストを突進させる処理
-			//Debug.Log ("突進");
-			if (once_process == false) {//処理が一度だけでいい部分
-				once_process = true;//一度だけ処理のため
-				unityChanControlScriptWithRgidBody.enabled = true;
-				xbox_controller_licensing = true;
-				summoning_magicField.SetActive (false);
-			}
-			deathblow_Ghost.transform.Translate (0,0,10*Time.deltaTime);
-			deathblow_time+=Time.deltaTime;//時間によって処理を分けるため
-			if (deathblow_time > 4) {
-				Debug.Log ("終了");
-				deathblow_time = 0;
-				special_movie_finish = false;
-				do_Deathblow = false;//必殺技を行ったのでfalseに戻す
-				deathblow_Ghost.transform.localScale = new Vector3 (1,1,1);
-				deathblow_Ghost.transform.parent = gameObject.transform;//巨大した時に親要素を変更したので親を元に戻す
-				deathblow_Ghost.transform.localPosition = new Vector3 (0.2f,0,5);//親を戻してからローカル座標を元に戻す
-				deathblow_Ghost.transform.localRotation = Quaternion.Euler(0,0,0);//親を戻してから向きを元に戻す
-				scale_value = 1;
-				deathblow_Ghost.SetActive (false);
-				once_process = false;
-			}
-		}
-	}
+		
 
 	//アニメーションイベント
 	void StartAttackHit(){
