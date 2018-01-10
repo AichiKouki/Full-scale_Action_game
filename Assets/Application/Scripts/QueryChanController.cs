@@ -168,17 +168,19 @@ public class QueryChanController : MonoBehaviour {
 		//右スティックボタンの左右
 		float LeftStickHorizontal = Input.GetAxis("LeftStickHorizontal");
 		if (LeftStickHorizontal < 0.0f){
-			Debug.Log ("右スティックの右");
+			//Debug.Log ("右スティックの右");
 		}else if(LeftStickHorizontal > 0.0f){
-			Debug.Log("右スティックの左");
+			//Debug.Log("右スティックの左");
 		}
 
 		//右スティックボタンの上下
 		float LeftStickVertical = Input.GetAxis("LeftStickVertical");
 		if (LeftStickVertical < 0.0f){
-			Debug.Log ("右スティックの下");
+			//Debug.Log ("右スティックの下");
+			if(LeftStickVertical<-0.7f && transform.position.y>2)transform.Translate (0,-6f*Time.deltaTime,0);
 		}else if(LeftStickVertical > 0.0f){
-			Debug.Log ("右スティックの上");
+			//Debug.Log ("右スティックの上");
+			if(LeftStickVertical>0.7f)transform.Translate (0,6f*Time.deltaTime,0);
 		}
 
 		//トリガーに関しては、強さを調整できる。弱く押せば-0.1とかになるけど、完全に押したら-1になる
@@ -206,7 +208,7 @@ public class QueryChanController : MonoBehaviour {
 	//必殺技
 	void Deathblow(){
 		//お化けを大きくして、敵に突進するような必殺技
-		if(scale_value<=15)scale_value += Time.deltaTime*3;
+		if(scale_value<=30)scale_value += Time.deltaTime*3;
 		ghost_scale.x=scale_value;
 		ghost_scale.y=scale_value;
 		ghost_scale.z=scale_value;
@@ -219,7 +221,7 @@ public class QueryChanController : MonoBehaviour {
 				xbox_controller_licensing = true;
 				summoning_magicField.SetActive (false);
 			}
-			deathblow_Ghost.transform.Translate (0,0,3*Time.deltaTime);
+			deathblow_Ghost.transform.Translate (0,0,10*Time.deltaTime);
 			deathblow_time+=Time.deltaTime;//時間によって処理を分けるため
 			if (deathblow_time > 4) {
 				Debug.Log ("終了");

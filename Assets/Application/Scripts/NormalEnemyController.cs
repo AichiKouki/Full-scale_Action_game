@@ -7,9 +7,11 @@ public class NormalEnemyController : MonoBehaviour {
 	//剣だけを判定するため
 	GameObject otherChild;
 
+	Animator animator;
+
 	// Use this for initialization
 	void Start () {
-		
+		animator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -21,6 +23,12 @@ public class NormalEnemyController : MonoBehaviour {
 		otherChild = other.gameObject.transform.Find ("Character1_Reference").gameObject;
 		if (otherChild.gameObject.tag == "sword") {
 			Debug.Log ("剣に当たった");
+		}
+	}
+
+	void OnTriggerEnter(Collider other){
+		if (other.gameObject.tag == "magicAttackObj") {
+			animator.SetTrigger ("Dead");
 		}
 	}
 }
