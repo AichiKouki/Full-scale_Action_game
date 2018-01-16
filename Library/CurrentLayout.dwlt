@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -106,7 +106,7 @@ MonoBehaviour:
     y: 30
     width: 1440
     height: 758
-  m_MinSize: {x: 681, y: 492}
+  m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 56
@@ -130,7 +130,7 @@ MonoBehaviour:
     y: 0
     width: 1019
     height: 758
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 57
@@ -154,8 +154,8 @@ MonoBehaviour:
     y: 0
     width: 1019
     height: 474
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
   controlID: 58
 --- !u!114 &8
@@ -201,16 +201,16 @@ MonoBehaviour:
     y: 0
     width: 713
     height: 474
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 16}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 16}
   - {fileID: 13}
   - {fileID: 14}
   - {fileID: 12}
-  m_Selected: 0
-  m_LastSelected: 2
+  m_Selected: 2
+  m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -432,7 +432,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoom: 0
     m_UniformScale: 1
     m_UpDirection: 1
@@ -491,9 +491,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e2b4ffff
-    m_LastClickedID: -19230
-    m_ExpandedIDs: 60b8ffff9efbffff000000003e3b0000
+    m_SelectedIDs: 04fbffff
+    m_LastClickedID: -1276
+    m_ExpandedIDs: 9efbffff00000000e83a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -544,14 +544,14 @@ MonoBehaviour:
     height: 453
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 3883.4169709682465
+  lastFramingTime: 49.84760105609894
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -25.8, y: 4.0716276, z: 57.372158}
+    m_Target: {x: 420.47183, y: 367.6, z: 0}
     speed: 2
-    m_Value: {x: -25.8, y: 4.0716276, z: 57.372158}
+    m_Value: {x: 420.47183, y: 367.6, z: 0}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -575,13 +575,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.07566799, y: -0.3536329, z: 0.028653909, w: 0.93188316}
+    m_Target: {x: -0.138868, y: 0.62860054, z: 0.115318105, w: 0.7564985}
     speed: 2
-    m_Value: {x: 0.07566765, y: -0.3536313, z: 0.028653778, w: 0.9318789}
+    m_Value: {x: -0.138868, y: 0.62860054, z: 0.1153181, w: 0.7564985}
   m_Size:
-    m_Target: 4.383332
+    m_Target: 245.01247
     speed: 2
-    m_Value: 4.383332
+    m_Value: 245.01247
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_LastLockedObject: {fileID: 0}
-  m_ViewIsLockedToObject: 0
+  m_ViewIsLockedToObject: 1
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -631,7 +631,8 @@ MonoBehaviour:
     m_ScenePaths: []
     m_ShowAllHits: 0
     m_SearchArea: 0
-    m_Folders: []
+    m_Folders:
+    - Assets/Application/Prefabs
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
@@ -642,7 +643,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: c8210000
     m_LastClickedID: 8648
-    m_ExpandedIDs: 00000000fc2700001a2800003e2800009e280000f6280000fc2800000e2900001229000060290000a22a0000862b0000a42b0000aa2b0000862c0000cc2c00002c2d0000c22e0000782f0000e82f0000423000004e300000243100005a3100009a3100006e32000074320000c2320000f2320000303400003a34000082340000ec34000058350000d6350000dc3500005836000066360000303700005037000076370000d8380000b439000020440000224400002444000026440000284400002a440000
+    m_ExpandedIDs: 00000000fe27000040280000f8280000fe2800001029000014290000a42a0000882b0000a62b00006a2c0000882c0000ce2c00002e2d0000c42e00000e2f0000122f00007a2f0000bc2f0000ea2f0000243000004430000050300000263100005c3100009c31000076320000c4320000f43200003c34000084340000ee3400005a350000de35000068360000323700005237000078370000da380000b63900005444000056440000584400005a4400005c4400005e440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -667,24 +668,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 287}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fc2700003e2800009e280000f6280000fc2800000e2900001229000060290000a22a0000862b0000a42b0000aa2b0000682c0000862c0000cc2c00002c2d0000c22e0000782f0000e82f0000423000004e300000243100005a3100009a3100006e32000074320000c2320000f2320000303400003a34000082340000ec34000058350000d6350000dc3500005836000066360000303700005037000076370000d8380000b439000020440000224400002444000026440000284400002a440000
+    m_ExpandedIDs: 00000000fe27000040280000f8280000fe2800001029000014290000a42a0000882b0000a62b00006a2c0000882c0000ce2c00002e2d0000c42e00000e2f0000122f00007a2f0000bc2f0000ea2f0000243000004430000050300000263100005c3100009c31000076320000c4320000f43200003c34000084340000ee3400005a350000de35000068360000323700005237000078370000da380000b63900005444000056440000584400005a4400005c4400005e440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: GhostGenerator
-      m_OriginalName: GhostGenerator
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 19552
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 

@@ -34,5 +34,5 @@ public class NormalEnemyController : MonoBehaviour {
 			animator.SetTrigger ("Dead");
 			hitPoint.gameObject.tag = "Untagged";
 		}
-	}
+	}		
 }
