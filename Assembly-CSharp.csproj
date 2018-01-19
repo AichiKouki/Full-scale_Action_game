@@ -55,6 +55,7 @@
      <Compile Include="Assets\Application\Scripts\MagicAttackController.cs" />
      <Compile Include="Assets\Application\Scripts\MagicAttackObjController.cs" />
      <Compile Include="Assets\Application\Scripts\MovieController.cs" />
+     <Compile Include="Assets\Application\Scripts\MovieQueryChanController.cs" />
      <Compile Include="Assets\Application\Scripts\MovieZombieController.cs" />
      <Compile Include="Assets\Application\Scripts\NormalEnemyController.cs" />
      <Compile Include="Assets\Application\Scripts\QueryChanController.cs" />

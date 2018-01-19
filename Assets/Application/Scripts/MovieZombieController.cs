@@ -22,7 +22,7 @@ public class MovieZombieController : MonoBehaviour {
 	IEnumerator Make_animation_start_hours_at_random(){
 		Debug.Log ("アニメーションバラバラ");
 		animator.enabled = false;
-		ran = Random.Range (1,3);
+		ran = Random.Range (0.1f,1);
 		yield return new WaitForSeconds (ran);
 		animator.enabled = true;
 	}

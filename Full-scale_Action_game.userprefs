@@ -1,9 +1,12 @@
 ﻿<Properties StartupConfiguration="{C9654307-3396-8201-6082-8EE2D3A45BD1}|" StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Application/Scripts/MagicAttackController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Application/Scripts/MovieController.cs">
     <Files>
-      <File FileName="Assets/Application/Scripts/QueryChanController.cs" Line="20" Column="2" />
-      <File FileName="Assets/Application/Scripts/MagicAttackController.cs" Line="60" Column="36" />
-      <File FileName="Assets/Application/Scripts/SpecialMoveController.cs" Line="17" Column="31" />
+      <File FileName="Assets/Application/Scripts/GifAnimation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Application/Scripts/QueryChanController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Application/Scripts/MagicAttackController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Application/Scripts/SpecialMoveController.cs" Line="10" Column="18" />
+      <File FileName="Assets/Application/Scripts/MovieQueryChanController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Application/Scripts/MovieController.cs" Line="40" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
