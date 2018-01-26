@@ -40,6 +40,10 @@ public class QueryChanController : MonoBehaviour {
 	MagicAttackController magicAttackController;
 	public bool xbox_controller_licensing=true;//xboxコントローラーを使用していいかのフラグ
 
+	//3Dメニューの処理
+	[SerializeField]
+	PanelManager panelManager;//3Dメニューのスクリプトを利用して、Xboxコントローラーから使用する。
+
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
@@ -85,6 +89,7 @@ public class QueryChanController : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton15)) {
 			Debug.Log("Xboxボタンが押された");
+			panelManager.OnEnable ();//3Dメニューの表示
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton13)) {
