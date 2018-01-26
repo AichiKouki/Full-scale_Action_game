@@ -25,7 +25,8 @@ public class PanelManager : MonoBehaviour {
 		OpenPanel(initiallyOpen);
 	}
 
-	public void OpenPanel (Animator anim)
+	//Settingsのような、次のパネルを開く処理
+	public void OpenPanel (Animator anim)//あらかじめpublicにinitiallyOpenという変数名で入れていて、OnEnable関数からそのanimatorの変数が渡される
 	{
 		if (m_Open == anim)
 			return;
@@ -60,7 +61,7 @@ public class PanelManager : MonoBehaviour {
 		return go;
 	}
 
-	public void CloseCurrent()
+	public void CloseCurrent()//パネルを変更するたびに呼ばれる
 	{
 		if (m_Open == null)
 			return;
@@ -69,6 +70,7 @@ public class PanelManager : MonoBehaviour {
 		SetSelected(m_PreviouslySelected);
 		StartCoroutine(DisablePanelDeleyed(m_Open));
 		m_Open = null;
+		//Debug.Log ("閉じました");
 	}
 
 	IEnumerator DisablePanelDeleyed(Animator anim)

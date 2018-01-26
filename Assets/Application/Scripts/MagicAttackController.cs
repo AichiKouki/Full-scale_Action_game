@@ -35,7 +35,7 @@ public class MagicAttackController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (do_Deathblow == true) Deathblow ();
+		if (do_Deathblow == true) Deathblow ();//XboxコントローラーのYボタンを押された瞬間にフラグが立って、ここが処理される
 	}
 
 	public void StartDeathblow(){
@@ -64,11 +64,11 @@ public class MagicAttackController : MonoBehaviour {
 			//一度だけ処理したい部分
 			if (once_process == false) {
 				once_process = true;//一度だけ処理のため
-				unityChanControlScriptWithRgidBody.enabled = true;
-				queryChanController.xbox_controller_licensing = true;
-				summoning_magicField.SetActive (false);
+				unityChanControlScriptWithRgidBody.enabled = true;//カメラ演出が終わったらキャラを移動できるようにする
+				queryChanController.xbox_controller_licensing = true;//xbox関係の操作もできるようにする。
+				summoning_magicField.SetActive (false);//必殺技を発動した瞬間のエフェクトを非表示にする。
 				magic_ring.SetActive(false);
-				deathblow_time = 0;
+				deathblow_time = 0;//必殺技発動から、終了までの時間を0に戻す
 			}
 
 			//Debug.Log ("突進");
@@ -82,8 +82,8 @@ public class MagicAttackController : MonoBehaviour {
 				deathblow_Ghost.transform.parent = gameObject.transform;//巨大した時に親要素を変更したので親を元に戻す
 				deathblow_Ghost.transform.localPosition = new Vector3 (0.2f,0,5);//親を戻してからローカル座標を元に戻す
 				deathblow_Ghost.transform.localRotation = Quaternion.Euler(0,0,0);//親を戻してから向きを元に戻す
-				scale_value = 1;
-				deathblow_Ghost.SetActive (false);
+				scale_value = 1;//必殺技によって巨大化したゴーストのサイズを1に戻す
+				deathblow_Ghost.SetActive (false);//必殺技が終わったら、巨大化する方のゴーストは非表示にする。
 				once_process = false;
 			}
 		}
