@@ -43,14 +43,18 @@ public class QueryChanController : MonoBehaviour {
 	//3Dメニューの処理
 	[SerializeField]
 	PanelManager panelManager;//3Dメニューのスクリプトを利用して、Xboxコントローラーから使用する。
+	private bool openPanel=false;//Xboxコントローラーだけで、3Dメニューの表示と非表示を行うので、開くたびに、フラグを変更する。
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator> ();
 		aud = GetComponent<AudioSource> ();
 
+		//振動対応かどうかに調べる処理
 		if (SystemInfo.supportsVibration) print("振動対応");
 		else print("振動非対応");
+
+		panelManager.CloseCurrent ();//最初は3Dメニューを閉じる
 	}
 
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
@@ -89,7 +93,9 @@ public class QueryChanController : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton15)) {
 			Debug.Log("Xboxボタンが押された");
-			panelManager.OnEnable ();//3Dメニューの表示
+			if(openPanel==false)panelManager.OnEnable ();//3Dメニューの表示
+			else panelManager.CloseCurrent();
+			openPanel = !openPanel;//同じボタンだけで処理するので、逆のフラグの値を入れるので、これで処理できる。
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton13)) {
