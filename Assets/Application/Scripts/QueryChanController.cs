@@ -1,26 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class QueryChanController : MonoBehaviour {
 	//アニメーション関連
-	Animator animator;
+	public Animator animator;
 	public bool startAttackHit=false;
 	public bool endAttackHit = false;
 	public bool endAttack = false;
 	private int attackType = 1;
-	private bool attackPermission=true;//連続でキーを押して攻撃しようとしてアニメーションがマシンガンみたいに切り替わらないように攻撃許可フラグの作成
+	public bool attackPermission=true;//連続でキーを押して攻撃しようとしてアニメーションがマシンガンみたいに切り替わらないように攻撃許可フラグの作成
 
-	AudioSource aud;
-	[SerializeField]
-	AudioClip[] se;
+	public AudioSource aud;
+	public AudioClip[] se;
 
-	[SerializeField]
-	UnityChanControlScriptWithRgidBody unityChanControlScriptWithRgidBody;//必殺技発動時は移動とかできないようにしたいから
+	public UnityChanControlScriptWithRgidBody unityChanControlScriptWithRgidBody;//必殺技発動時は移動とかできないようにしたいから
 
 
 	//走る処理関連
-	private bool isRun=true;
+	public bool isRun=true;
 
 	//魔法陣
 	[SerializeField]
@@ -29,11 +29,10 @@ public class QueryChanController : MonoBehaviour {
 	GameObject summoning_magicField;//必殺技の時に召喚したような演出のため
 
 	//通常攻撃
-	[SerializeField]
-	GameObject[] magicAttackObjPre;
-	[SerializeField]
-	GameObject magicAttackObjPos;
-	GameObject magicAttackObj;
+	public GameObject[] magicAttackObjPre;
+
+	public GameObject magicAttackObjPos;
+	public GameObject magicAttackObj;
 
 	//必殺技関連
 	[SerializeField]
@@ -41,9 +40,14 @@ public class QueryChanController : MonoBehaviour {
 	public bool xbox_controller_licensing=true;//xboxコントローラーを使用していいかのフラグ
 
 	//3Dメニューの処理
+	public PanelManager panelManager;//3Dメニューのスクリプトを利用して、Xboxコントローラーから使用する。
+	public Button[] fourTypeButton;//Resumeボタン、NewGameボタン、Settingsボタン、Quitボタンを入れる
+
+	public bool openPanel=false;//Xboxコントローラーだけで、3Dメニューの表示と非表示を行うので、開くたびに、フラグを変更する。
+
+	//Xboxのコントローラーの操作をまとめたクラス
 	[SerializeField]
-	PanelManager panelManager;//3Dメニューのスクリプトを利用して、Xboxコントローラーから使用する。
-	private bool openPanel=false;//Xboxコントローラーだけで、3Dメニューの表示と非表示を行うので、開くたびに、フラグを変更する。
+	XboxController xboxController;
 
 	// Use this for initialization
 	void Start () {
@@ -60,9 +64,13 @@ public class QueryChanController : MonoBehaviour {
 	// 以下、メイン処理.リジッドボディと絡めるので、FixedUpdate内で処理を行う.
 	void FixedUpdate ()
 	{
-		if(xbox_controller_licensing==true) Xbox_controller_process ();
+		//if(xbox_controller_licensing==true) Xbox_controller_process ();
 
 	}//FixedUpdate
+
+	void Update(){
+		xboxController.Xbox_controller_process ();//Input関連は、FixedUpdateだと処理されないことがあるとアドバイスをいただいてこれに変更
+	}
 
 	void Xbox_controller_process(){
 		//xBoxのコントローラー処理
@@ -95,7 +103,7 @@ public class QueryChanController : MonoBehaviour {
 			Debug.Log("Xboxボタンが押された");
 			if(openPanel==false)panelManager.OnEnable ();//3Dメニューの表示
 			else panelManager.CloseCurrent();
-			openPanel = !openPanel;//同じボタンだけで処理するので、逆のフラグの値を入れるので、これで処理できる。
+			openPanel = !openPanel;
 		}
 
 		if (Input.GetKeyDown(KeyCode.JoystickButton13)) {
@@ -190,6 +198,19 @@ public class QueryChanController : MonoBehaviour {
 		float RightTrigger = Input.GetAxis("RightTrigger");//何もしなければ1。押したら、-1となる
 		if (RightTrigger == -1) {
 			Debug.Log ("RTボタンが押された");
+		}
+
+		//PCと同じクリックの機能の実装(AかBかXかYボタンいずれかを押したら、クリックと同じ機能を持った)
+		if(Input.GetKeyDown(KeyCode.JoystickButton16) || Input.GetKeyDown(KeyCode.JoystickButton17) || Input.GetKeyDown(KeyCode.JoystickButton18) || Input.GetKeyDown(KeyCode.JoystickButton19)){
+			//現在選択してるボタンを調べて、そのあとはtargetの部分のボタンの変数を切り替える
+			//if()
+
+			ExecuteEvents.Execute
+			(
+				target      : fourTypeButton[0].gameObject,//resumeボタンを対象に処理
+				eventData   : new PointerEventData( EventSystem.current ),
+				functor     : ExecuteEvents.pointerClickHandler
+			);
 		}
 
 	}

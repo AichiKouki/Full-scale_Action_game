@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour {
 		if (fadeInValue > 0) {
 			fadeInImage.color = new Color (0/255,0/255,0/255,fadeInValue/255);
 		}
-		Debug.Log ("ふぇーどいんなう");
+		//Debug.Log ("ふぇーどいんなう");
 	}
 
 }

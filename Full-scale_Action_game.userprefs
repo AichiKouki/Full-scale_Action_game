@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{C9654307-3396-8201-6082-8EE2D3A45BD1}|" StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Application/Scripts/MagicAttackController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Application/Scripts/QueryChanController.cs">
     <Files>
-      <File FileName="Assets/Application/Scripts/QueryChanController.cs" Line="189" Column="39" />
+      <File FileName="Assets/Application/Scripts/QueryChanController.cs" Line="99" Column="17" />
       <File FileName="Assets/Asset Store/UI/SamplesUI/Scripts/ApplicationManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Application/Scripts/MovieController.cs" Line="1" Column="1" />
       <File FileName="Assets/Application/Scripts/GifAnimation.cs" Line="1" Column="1" />
-      <File FileName="Assets/Application/Scripts/MagicAttackController.cs" Line="40" Column="2" />
+      <File FileName="Assets/Application/Scripts/MagicAttackController.cs" Line="1" Column="1" />
       <File FileName="Assets/Application/Scripts/SpecialMoveController.cs" Line="1" Column="1" />
       <File FileName="Assets/Application/Scripts/MovieQueryChanController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Application/Scripts/GameController.cs" Line="27" Column="25" />
+      <File FileName="Assets/Application/Scripts/GameController.cs" Line="1" Column="1" />
       <File FileName="Assets/Asset Store/UI/SamplesUI/Scripts/TiltWindow.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
