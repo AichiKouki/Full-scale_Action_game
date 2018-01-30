@@ -73,6 +73,7 @@ public class QueryChanController : MonoBehaviour {
 	}
 
 	void Xbox_controller_process(){
+		/*
 		//xBoxのコントローラー処理
 		if (Input.GetKeyDown(KeyCode.JoystickButton16) && attackPermission==true) {
 			Debug.Log("Aボタン");
@@ -212,7 +213,7 @@ public class QueryChanController : MonoBehaviour {
 				functor     : ExecuteEvents.pointerClickHandler
 			);
 		}
-
+		*/
 	}
 
 	//魔法陣表示処理
